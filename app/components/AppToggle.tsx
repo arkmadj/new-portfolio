@@ -2,7 +2,7 @@ import React from 'react'
 
 const AppToggle = () => {
   return (
-    <div>AppToggle</div>
+    <div className='bg-white w-[35px] h-5 rounded-full'></div>
   )
 }
 
