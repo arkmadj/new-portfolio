@@ -1,33 +1,30 @@
 import React from "react";
 
-type Props = {
+export interface ProjectCardProps {
 	name: string;
-	startDate: string;
-	endDate?: string;
+	date: string;
 	paragraphs: string[];
 	link: string;
 	imgSrc: string;
-};
+}
 
 const ProjectCard = ({
 	name,
-	startDate,
-	endDate,
+	date,
 	paragraphs,
 	link,
 	imgSrc,
-}: Props) => {
+}: ProjectCardProps) => {
 	return (
 		<section className="flex">
 			<div>
 				<h2>{name}</h2>
-        <p>{startDate}</p>
-        <div>
-
-        {paragraphs.map((paragraph, key) => (
-          <p key={key}>{paragraph}</p>
-        ))}
-        </div>
+				<p>{date}</p>
+				<div>
+					{paragraphs.map((paragraph, key) => (
+						<p key={key}>{paragraph}</p>
+					))}
+				</div>
 			</div>
 			<div></div>
 		</section>
