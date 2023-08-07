@@ -1,7 +1,7 @@
 import React from "react";
 import AppButton from "./AppButton";
 import Image from "next/image";
-import ArrowUpRight from "./svgs/ArrowUpRight";
+import ArrowUpRightIcon from "./svgs/ArrowUpRightIcon";
 
 export interface ProjectCardProps {
 	name: string;
@@ -21,7 +21,7 @@ const ProjectCard = ({
 	imgSrc,
 }: ProjectCardProps) => {
 	return (
-		<section className="grid grid-cols-2 mb-10 border-2 border-white px-10 py-[60px]">
+		<section className="grid grid-cols-2 mb-10 border-2 border-foreground px-10 py-[60px]">
 			<div className="flex-grow">
 				<h2 className="mb-2 font-mono text-2xl font-bold">{name}</h2>
 				<p className="mb-8 font-sans text-lg font-medium">{date}</p>
@@ -32,7 +32,7 @@ const ProjectCard = ({
 						</p>
 					))}
 				</div>
-				<AppButton label="Visit Project" icon={ArrowUpRight}/>
+				<AppButton label="Visit Project" icon={ArrowUpRightIcon}/>
 			</div>
 			<div className="flex justify-end flex-grow">
         {ImageComponent && <ImageComponent/>}
