@@ -1,4 +1,6 @@
+import B54Image from "../components/B54Image";
 import { ProjectCardProps } from "../components/ProjectCard";
+import SharaImage from "../components/SharaImage";
 
 const projects: Array<ProjectCardProps> = [
 	{
@@ -9,17 +11,18 @@ const projects: Array<ProjectCardProps> = [
 			"Tools I use to achieve this are Vue, NestJS, AdonisJS, NodeJS, Subsockets, Cypress, Quasar.",
 		],
     link: "",
-    imgSrc: "",
+    imageComponent: B54Image,
 	},
 	{
 		name: "Shara",
-    date: "",
+    date: "April 2021 - January 2022",
 		paragraphs: [
       "I collaborated with a team of four engineers, one designer, and one product manager from the Flex team. Our goal was to provide a more versatile product with flexible terms. This upgrade allowed a broader range of customers to access our product, ensuring inclusivity and accessibility. As a result, we were able to reduce the churn rate by approximately 20%.",
 			"Tools I used to achieve this are ReactNative, TypeScript, Redis, AdonisJS, NodeJS, PostgresDB, MongoDB and JavaScript.",
 		],
     link: "",
     imgSrc: "",
+    imageComponent: SharaImage,
 	},
 ];
 
