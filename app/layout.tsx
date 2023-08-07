@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, DM_Sans, DM_Mono } from "next/font/google";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -12,6 +12,13 @@ const jetbrains_mono = JetBrains_Mono({
 	subsets: ["latin"],
 	display: "swap",
 	variable: "--font-jetbrains-mono",
+});
+
+const dm_sans = DM_Sans({
+	subsets: ["latin"],
+	display: "swap",
+	weight: ["400", "500"],
+	variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +33,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={`${inter.className} ${jetbrains_mono.className}`}>
+			<body
+				className={`${inter.variable} ${jetbrains_mono.variable} ${dm_sans.variable}`}
+			>
 				{children}
 			</body>
 		</html>
