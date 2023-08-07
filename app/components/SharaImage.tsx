@@ -53,7 +53,7 @@ const WeekCard = () => {
 const SharaImage = (props: Props) => {
 	return (
 		<div className="relative w-full bg-red-s400 font-dm-sans">
-      <Blob className="absolute w-fit right-12 bottom-8"/>
+      <Blob className="absolute w-fit right-12 bottom-8" blobClassName="fill-blob"/>
 			<ScoreCard />
 			<LimitCard />
 			<WeekCard />
