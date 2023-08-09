@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	--foreground: #1b1b1b;
-	--background: #fff;
-	--blob-color: #D4D4D4;
+.light {
+	/* --foreground: #1b1b1b; */
+	/* --background: #fff;
+	--blob-color: #d4d4d4;
+	--theme: dark;
+	color-scheme: var(--theme); */
+
+	--dark-mode-scale: var(1000);
 
 	/* b54 colors */
 	--b54-gray-1: #4a4a4a;
@@ -17,13 +21,15 @@
 	--b54-secondary: #a6a6a6;
 
 	/* shara colors */
-	--shara-gray-1: #949494;
-	--shara-gray-2: #939393;
-	--shara-gray-3: #929292;
-	--shara-gray-4: #8c8c8c;
+	--shara-gray-1: #fff;
+	--shara-gray-2: #fff;
+	--shara-gray-3: #fff;
+	--shara-gray-4: #fff;
 	--shara-green-1: #238b71;
-	--shara-green-2: #11863c;
-	--image-black: #000;
+	--shara-green-2: #fff;
+	--shara-primary: #fff;
+	--shara-background: #404040;
+	--shara-secondary: #939393;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -35,10 +41,12 @@
 	}
 } */
 
-.dark {
+:root {
 	--foreground: #fff;
 	--background: #1b1b1b;
-	--blob-color: #353535; 
+	--blob-color: #353535;
+	--theme: dark;
+	--dark-mode-scale: var(100);
 
 	/* b54 colors */
 	--b54-gray-1: #f3f3f3;
@@ -48,9 +56,51 @@
 	--b54-primary: #000;
 	--b54-background: #fff;
 	--b54-secondary: #4f4f4f;
+
+	/* shara colors */
+	--shara-gray-1: #949494;
+	--shara-gray-2: #939393;
+	--shara-gray-3: #929292;
+	--shara-gray-4: #8c8c8c;
+	--shara-green-1: #238b71;
+	--shara-green-2: #11863c;
+	--shara-primary: #000;
+	--shara-background: #fff;
+	--shara-secondary: #939393;
 }
 
 body {
 	color: var(--foreground);
 	background: var(--background);
+	/* max-height: 100¸¸¸¸¸000px; */
+	/* overflow: hidden; */
+	/* height: 100dvh + 1000px; */
+	/* overflow: hidden; */
+}
+
+.grow-ball {
+	transform: scale(100);
+	/* transition: transform 1s ease-in; */
+	animation: grow 1.5s ease-out 0s infinite 1;
+}
+
+.shrink-ball {
+	animation: grow 1.5s ease-out 0s infinite 1;
+}
+
+.test {
+	/* background: red; */
+	/* height: calc(100dvh + 1000px); */
+	/* height: 5000px; */
+	/* overflow: hidden; */
+	overflow-x: hidden;
+}
+
+@keyframes grow {
+	0% {
+		transform: scale(0.001);
+	}
+	100% {
+		transform: scale(100);
+	}
 }
