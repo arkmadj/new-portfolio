@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import AppToggle from "./AppToggle";
 
 const NavBar = () => {
@@ -8,20 +8,37 @@ const NavBar = () => {
 
 	// setIsDarkMode(!isDarkMode)
 
+	const darkModeCover = useRef<HTMLDivElement>(null!);
+
+	// const toggleDarkMode = () => {
+	// 	document.body.classList.toggle("light");
+	// 	const a = darkModeCover.current;
+	// 	a.classList.toggle("grow-ball");
+	// 	a.classList.toggle("shrink-ball")
+	// 	setTimeout(() => {
+	// 		a.classList.toggle("fall-black")
+	// 	}, 1100);
+	// 	// a.style.cla = "10";
+	// 	// a.style.s = ""
+	// 	// console.log({a})
+	// };
+
 	const toggleDarkMode = () => {
-		document.body.classList.toggle("dark")
+		document.body.classList.toggle("light");
+		const a = darkModeCover.current;
+		!a.classList.contains("grow-ball") ? addDarkMode() : addLightMode();
 	};
 
 	const addDarkMode = () => {
-		const body = document.body;
-		body.classList.remove("light-mode");
-		body.classList.add("dark-mode");
+		const a = darkModeCover.current;
+		a.classList.remove("shrink-ball");
+		a.classList.add("grow-ball");
 	};
 
 	const addLightMode = () => {
-		const body = document.body;
-		body.classList.remove("dark-mode");
-		body.classList.add("light-mode");
+		const a = darkModeCover.current;
+		a.classList.remove("grow-ball");
+		a.classList.add("shrink-ball");
 	};
 
 	const navLinks = [
@@ -50,11 +67,15 @@ const NavBar = () => {
 			<ul className="flex list-none gap-[50px]">
 				{navLinks.map((link, key) => (
 					<li key={key} className="cursor-pointer">
-						{link.name}
+						<span className="text-white">{link.name}</span>
 					</li>
 				))}
-				<li>
-					<AppToggle onChange={toggleDarkMode} />
+				<li className="relative">
+					<AppToggle onChange={toggleDarkMode} className="mt-[3px]" />
+					<div
+						ref={darkModeCover}
+						className="absolute pointer-events-none mix-blend-difference z-10 -top-10 -right-10 w-[100px] h-[100px] bg-foreground rounded-full transform origin-center scale-[0.001] transition-transform duration-1000"
+					></div>
 				</li>
 			</ul>
 		</nav>
