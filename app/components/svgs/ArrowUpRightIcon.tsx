@@ -16,7 +16,6 @@ const ArrowUpRightIcon = ({ className }: ArrowUpRightIconProps) => {
 			>
 				<path
 					d="M5.83337 14.4493L14.1667 6.11599M14.1667 6.11599V14.4493M14.1667 6.11599H5.83337"
-					stroke="#1B1B1B"
 					stroke-width="2"
 					stroke-linecap="round"
 					stroke-linejoin="round"
