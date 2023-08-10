@@ -17,7 +17,7 @@ const ProjectCard = ({
 	date,
 	paragraphs,
 	link,
-  imageComponent: ImageComponent,
+	imageComponent: ImageComponent,
 	imgSrc,
 }: ProjectCardProps) => {
 	return (
@@ -32,10 +32,14 @@ const ProjectCard = ({
 						</p>
 					))}
 				</div>
-				<AppButton label="Visit Project" icon={ArrowUpRightIcon}/>
+				<AppButton
+					label="Visit Project"
+					rightIcon={() => <ArrowUpRightIcon className=" stroke-background" />}
+					className="bg-foreground text-background"
+				/>
 			</div>
-			<div className="flex justify-end flex-grow">
-        {ImageComponent && <ImageComponent/>}
+			<div className="z-20 flex justify-end flex-grow">
+				{ImageComponent && <ImageComponent />}
 				{/* {imgSrc && (
 					<Image
 						src={imgSrc}
