@@ -1,44 +1,40 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import AppToggle from "./AppToggle";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
-	// const [isDarkMode, setIsDarkMode] = useState(false)
+	const [isLight, setIsLight] = useState(false);
 
-	// setIsDarkMode(!isDarkMode)
-
-	const darkModeCover = useRef<HTMLDivElement>(null!);
-
-	// const toggleDarkMode = () => {
-	// 	document.body.classList.toggle("light");
-	// 	const a = darkModeCover.current;
-	// 	a.classList.toggle("grow-ball");
-	// 	a.classList.toggle("shrink-ball")
-	// 	setTimeout(() => {
-	// 		a.classList.toggle("fall-black")
-	// 	}, 1100);
-	// 	// a.style.cla = "10";
-	// 	// a.style.s = ""
-	// 	// console.log({a})
-	// };
-
-	const toggleDarkMode = () => {
-		document.body.classList.toggle("light");
-		const a = darkModeCover.current;
-		!a.classList.contains("grow-ball") ? addDarkMode() : addLightMode();
+	const variants = {
+		light: {
+			scale: [0, 99, 99, 99, 99, 99, 99, 99, 99, 100],
+		},
+		dark: {
+			scale: [100, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+		},
 	};
 
-	const addDarkMode = () => {
-		const a = darkModeCover.current;
-		a.classList.remove("shrink-ball");
-		a.classList.add("grow-ball");
+	const toggleDarkMode = () => {
+		const body = document.body;
+		!body.classList.contains("light") ? addLightMode() : removeLightMode();
 	};
 
 	const addLightMode = () => {
-		const a = darkModeCover.current;
-		a.classList.remove("grow-ball");
-		a.classList.add("shrink-ball");
+		setIsLight((isLight) => !isLight);
+		document.body.classList.toggle("light");
+		const root = document.querySelector(":root")!
+		root.classList.toggle('light-bar')
+	};
+
+	const removeLightMode = () => {
+		setIsLight((isLight) => !isLight);
+		setTimeout(() => {
+			document.body.classList.toggle("light");
+			const root = document.querySelector(":root")!
+			root.classList.toggle('light-bar')
+		}, 1000);
 	};
 
 	const navLinks = [
@@ -67,15 +63,24 @@ const NavBar = () => {
 			<ul className="flex list-none gap-[50px]">
 				{navLinks.map((link, key) => (
 					<li key={key} className="cursor-pointer">
-						<span className="text-white">{link.name}</span>
+						<span className="text-foreground">{link.name}</span>
 					</li>
 				))}
 				<li className="relative">
 					<AppToggle onChange={toggleDarkMode} className="mt-[3px]" />
-					<div
-						ref={darkModeCover}
-						className="absolute pointer-events-none mix-blend-difference z-10 -top-10 -right-10 w-[100px] h-[100px] bg-foreground rounded-full transform origin-center scale-[0.001] transition-transform duration-1000"
-					></div>
+					{true && (
+						<motion.div
+							initial={false}
+							animate={isLight ? "light" : "dark"}
+							variants={variants}
+							transition={{
+								times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+								duration: 0.4,
+								ease: "easeIn",
+							}}
+							className="absolute pointer-events-none z-10 -top-10 -right-10 w-[100px] h-[100px] bg-white rounded-full transform origin-center scsale-[1] transition-transform duration-1000 mix-blend-difference"
+						></motion.div>
+					)}
 				</li>
 			</ul>
 		</nav>
