@@ -20,7 +20,7 @@ const AppFooter = () => {
 		},
 	];
 	return (
-		<footer className="flex justify-between mb-[50px]">
+		<footer className="flex justify-between mb-[50px] font-sans">
 			<p>Ahmad Jinadu 2023</p>
 			<ul className="flex list-none gap-[50px] items-center">
 				{foooterLinks.map((link, key) => (
