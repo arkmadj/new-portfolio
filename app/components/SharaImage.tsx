@@ -45,7 +45,6 @@ const ScoreCard = () => {
 };
 
 const WeekCard = () => {
-	// const [activeWeek, setActiveWeek] = useState<number>(2)
 
 	return (
 		<div className="absolute bottom-[68px] right-[160px] grid w-56 grid-cols-2 gap-1 p-3 text-black bg-shara-background shadow-shara-3 rounded-xl">
