@@ -1,3 +1,4 @@
+import AppBanner from "./components/AppBanner";
 import AppFooter from "./components/AppFooter";
 import NavBar from "./components/NavBar";
 import ProjectCard from "./components/ProjectCard";
@@ -9,11 +10,7 @@ export default function Home() {
 			<div className="min-h-screen w-[1300px] ms-auto me-auto">
 				<NavBar />
 				<main>
-					<section className="min-h-[calc(100vh-152px)] bg-red-s00 flex items-end">
-						<h1 className="font-mono text-[180px] font-extrabold">
-							AHMAD JINADU
-						</h1>
-					</section>
+					<AppBanner/>
 					{projects.map((project, key) => (
 						<ProjectCard key={key} {...project} />
 					))}
