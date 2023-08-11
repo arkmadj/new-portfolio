@@ -16,8 +16,8 @@ const ChevronIcon = ({ className }: ChevronIconProps) => {
 			>
 				<path
 					d="M12.1445 6.56528L8.14453 10.5653L4.14453 6.56528"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 			</svg>
 		</div>
