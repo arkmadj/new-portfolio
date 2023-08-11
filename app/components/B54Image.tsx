@@ -82,7 +82,7 @@ const B54Image = () => {
 						<div className="flex items-end gap-3">
 							<div className="relative mb-[2.5px]">
 								<EyeIcon className="stroke-b54-secondary" />
-								<div className="absolute w-[6px] h-[6px] border rounded-full top-[3.4px] left-[4.5px] border-b54-secondary"></div>
+								<div className="absolute w-[6px] h-[6px] border rounded-full top-[3.4px] left-[5px] border-b54-secondary"></div>
 							</div>
 							<ChevronIcon className=" stroke-b54-secondary" />
 						</div>
