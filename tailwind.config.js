@@ -16,9 +16,9 @@ module.exports = {
 					"gray-2": "var(--b54-gray-2)",
 					"gray-3": "var(--b54-gray-3)",
 					"gray-4": "var(--b54-gray-4)",
-					"primary": "var(--b54-primary)",
-					"background": "var(--b54-background)",
-					"secondary": "var(--b54-secondary)",
+					primary: "var(--b54-primary)",
+					background: "var(--b54-background)",
+					secondary: "var(--b54-secondary)",
 				},
 				shara: {
 					"gray-1": "var(--shara-gray-1)",
@@ -27,15 +27,17 @@ module.exports = {
 					"gray-4": "var(--shara-gray-4)",
 					"green-1": "var(--shara-green-1)",
 					"green-2": "var(--shara-green-2)",
-					"primary": "var(--shara-primary)",
-					"background": "var(--shara-background)",
-					"secondary": "var(--shara-secondary)",
+					primary: "var(--shara-primary)",
+					background: "var(--shara-background)",
+					secondary: "var(--shara-secondary)",
 				},
 			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+				"shara-linear":
+					"linear-gradient(90deg, rgba(224,79,61,1) 15%, rgba(251,206,47,1) 15%, rgba(251,206,47,1) 30%, rgba(24,143,249,1) 30%, rgba(24,143,249,1) 45%, rgba(245,143,70,1) 45%, rgba(245,143,70,1) 60%, rgba(69,214,153,1) 60%, rgba(69,214,153,1) 100%)",
 			},
 			fontFamily: {
 				sans: ["var(--font-inter)"],
