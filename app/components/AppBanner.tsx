@@ -1,10 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import StarIcon from "./svgs/StarIcon";
-import { easeIn, motion } from "framer-motion";
+import { motion, useScroll, useAnimate, useTransform } from "framer-motion";
+import { scroll } from "framer-motion/dom";
 
 const AppBanner = () => {
+	const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 2])
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, -1.5])
 	const smallStars = [
 		{
 			className: "top-[36px] left-[306px]",
@@ -254,7 +258,12 @@ const AppBanner = () => {
 					/>
 				))}
 			</motion.div>
-			<h1 className="font-mono text-[180px] font-extrabold">AHMAD JINADU</h1>
+			<motion.h1
+				className="font-mono text-[180px] font-extrabold"
+				style={{ scale, opacity: opacity}}
+			>
+				AHMAD JINADU
+			</motion.h1>
 		</section>
 	);
 };
