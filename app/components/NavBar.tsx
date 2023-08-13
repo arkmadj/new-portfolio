@@ -9,10 +9,12 @@ const NavBar = () => {
 
 	const variants = {
 		light: {
-			scale: [0, 99, 99, 99, 99, 99, 99, 99, 99, 100],
+			// scale: [0, 99, 99, 99, 99, 99, 99, 99, 99, 100],
+			scale: 100,
 		},
 		dark: {
-			scale: [100, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+			// scale: [100, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+			scale: 0
 		},
 	};
 
@@ -74,7 +76,7 @@ const NavBar = () => {
 							animate={isLight ? "light" : "dark"}
 							variants={variants}
 							transition={{
-								times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+								// times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
 								duration: 0.4,
 								ease: "easeIn",
 							}}
