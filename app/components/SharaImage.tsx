@@ -36,7 +36,7 @@ const ScoreCard = () => {
 			<p className=" text-[10px] font-medium text-shara-gray-4">
 				You&rsquo;re doing great
 			</p>
-			<div className=" h-[3px] bg-red-500 w-full mb-[5px]"></div>
+			<div className=" h-[3px] bg-shara-linear w-full mb-[5px] rounded-lg"></div>
 			<p className=" text-[10px] font-medium text-shara-green-2">
 				Pay on time to increase your monthly limit
 			</p>
