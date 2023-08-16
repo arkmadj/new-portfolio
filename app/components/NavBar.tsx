@@ -1,20 +1,46 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppToggle from "./AppToggle";
 import { motion } from "framer-motion";
 
 const NavBar = () => {
 	const [isLight, setIsLight] = useState(false);
 
+	const [time, setTime] = useState(
+		new Date().toLocaleString("en-US", {
+			timeZone: "Africa/Lagos",
+			hour: "2-digit",
+			minute: "2-digit",
+		})
+	);
+
+	useEffect(() => {
+		var timer = setInterval(
+			() =>
+				setTime(
+					new Date().toLocaleString("en-US", {
+						timeZone: "Africa/Lagos",
+						hour: "2-digit",
+						minute: "2-digit",
+					})
+				),
+			1000
+		);
+
+		return () => {
+			clearInterval(timer);
+		};
+	}, []);
+
 	const variants = {
 		light: {
-			// scale: [0, 99, 99, 99, 99, 99, 99, 99, 99, 100],
-			scale: 100,
+			scale: [0, 99, 99, 99, 99, 99, 99, 99, 99, 100],
+			// scale: 100,
 		},
 		dark: {
-			// scale: [100, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-			scale: 0
+			scale: [100, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+			// scale: 0,
 		},
 	};
 
@@ -26,16 +52,16 @@ const NavBar = () => {
 	const addLightMode = () => {
 		setIsLight((isLight) => !isLight);
 		document.body.classList.toggle("light");
-		const root = document.querySelector(":root")!
-		root.classList.toggle('light-bar')
+		const root = document.querySelector(":root")!;
+		root.classList.toggle("light-bar");
 	};
 
 	const removeLightMode = () => {
 		setIsLight((isLight) => !isLight);
 		setTimeout(() => {
 			document.body.classList.toggle("light");
-			const root = document.querySelector(":root")!
-			root.classList.toggle('light-bar')
+			const root = document.querySelector(":root")!;
+			root.classList.toggle("light-bar");
 		}, 1000);
 	};
 
@@ -53,13 +79,14 @@ const NavBar = () => {
 			to: "",
 		},
 	];
+
 	return (
 		<nav className="flex justify-between py-10 font-sans text-lg font-medium">
 			<div className="flex gap-[13px]">
 				<div className=" w-6 h-[2px] bg-foreground mt-[11px]"></div>
 				<div className="flex flex-col gap-4">
 					<p>Software engineer with 4 years experience</p>
-					<p>Based in Lagos, Nigeria 09:23AM</p>
+					<p>Based in Lagos, Nigeria {time}</p>
 				</div>
 			</div>
 			<ul className="flex list-none gap-[50px]">
@@ -76,11 +103,11 @@ const NavBar = () => {
 							animate={isLight ? "light" : "dark"}
 							variants={variants}
 							transition={{
-								// times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+								times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
 								duration: 0.4,
 								ease: "easeIn",
 							}}
-							className="absolute pointer-events-none z-10 -top-10 -right-10 w-[100px] h-[100px] bg-white rounded-full transform origin-center scsale-[1] transition-transform duration-1000 mix-blend-difference"
+							className="absolute pointer-events-none z-10 -top-10 -right-10 w-[100px] h-[100px] bg-white rounded-full transform origin-center scsale-[1] transition-transform duration-1000 mix-blend-exclusion"
 						></motion.div>
 					)}
 				</li>
