@@ -8,7 +8,7 @@ import { scroll } from "framer-motion/dom";
 const AppBanner = () => {
 	const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 2])
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, -1.5])
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, -1])
 	const smallStars = [
 		{
 			className: "top-[36px] left-[306px]",
@@ -219,7 +219,7 @@ const AppBanner = () => {
 				}}
 				transition={{
 					repeat: Infinity,
-					duration: 15,
+					duration: 30,
 					repeatType: "loop",
 					ease: "linear",
 				}}
@@ -243,7 +243,7 @@ const AppBanner = () => {
 				}}
 				transition={{
 					repeat: Infinity,
-					duration: 10,
+					duration: 15,
 					repeatType: "loop",
 					ease: "linear",
 				}}
