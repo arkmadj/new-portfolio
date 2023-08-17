@@ -2,6 +2,7 @@ import React from "react";
 import AppButton from "./AppButton";
 import Blob from "./svgs/Blob";
 import ShoppingCart from "./svgs/ShoppingCartIcon";
+import LightningBolt from "./svgs/LightningBolt";
 
 type Props = {};
 
@@ -41,9 +42,12 @@ const ScoreCard = () => {
         You&rsquo;re doing great
       </p>
       <div className=" h-[3px] bg-shara-linear w-full mb-[5px] rounded-lg"></div>
-      <p className=" text-[10px] font-medium text-shara-green-2">
-        Pay on time to increase your monthly limit
-      </p>
+      <div className="flex items-center">
+        <LightningBolt size="23" pathClassName="fill-shara-green-2"/>
+        <p className=" text-[10px] font-medium text-shara-green-2">
+          Pay on time to increase your monthly limit
+        </p>
+      </div>
     </div>
   );
 };
