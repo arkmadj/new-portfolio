@@ -19,6 +19,9 @@ module.exports = {
 					primary: "var(--b54-primary)",
 					background: "var(--b54-background)",
 					secondary: "var(--b54-secondary)",
+					yellow: "var(--b54-yellow)",
+					green: "var(--b54-green)",
+					blue: "var(--b54-blue)",
 				},
 				shara: {
 					"gray-1": "var(--shara-gray-1)",
