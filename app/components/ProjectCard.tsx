@@ -40,15 +40,6 @@ const ProjectCard = ({
 			</div>
 			<div className="z-20 flex justify-end flex-grow">
 				{ImageComponent && <ImageComponent />}
-				{/* {imgSrc && (
-					<Image
-						src={imgSrc}
-						alt="B54 application dashboard"
-						width={600}
-						height={600}
-					/>
-				)} */}
-				{/* {imageComponent && <Image} */}
 			</div>
 		</section>
 	);
