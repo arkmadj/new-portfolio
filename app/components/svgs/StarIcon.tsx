@@ -15,7 +15,6 @@ const StarIcon = ({
 		<div className={`${className}`}>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-        // width="24"
         height={size}
         viewBox="0 0 7 8"
 				fill="none"
